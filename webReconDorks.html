@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Mashing</title>
+</head>
+<body>
+  <div class="bg-animation">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="stars4"></div>
+    <div class="page">
+        <header>
+            <img src="img/logo.png" alt="">
+            <h1>Mashing@Taha:$~</h1>
+            <a href="index.html">Home</a>
+            <a href="Blog.html">Blog</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="webReconDorks.html">Bugbounty Recon</a>
+          </header>
+      <div class="main-recon">
+        <div class="container">
+            <h1>Big Bounty Recon</h1>
+            <input type="text" id="domain" placeholder="Enter domain">
+            <button id="submit"><i class="fa fa-search"></i> Search</button>
+        
+            <div class="buttons-container hidden" id="recon-buttons">
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN}+intitle:index.of">Directory Listing</button>              
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN}+ext:xml+|+ext:conf+|+ext:cnf+|+ext:reg+|+ext:inf+|+ext:rdp+|+ext:cfg+|+ext:txt+|+ext:ora+|+ext:ini"> Configuration Files</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN}+ext:sql+|+ext:dbf+|+ext:mdb">Database Files</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN}+inurl:wp-+|+inurl:wp-content+|+inurl:plugins+|+inurl:uploads+|+inurl:themes+|+inurl:download">WordPress</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN}+ext:log">Log Files</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN}+ext:bkf+|+ext:bkp+|+ext:bak+|+ext:old+|+ext:backup">Backup and Old Files</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN}+inurl:login+|+inurl:signin+|+intitle:Login+|+intitle:+signin+|+inurl:auth">Login Pages</button>
+                <button class="recon-button" data-url='https://www.google.com/search?q=site:{DOMAIN}+intext:"sql+syntax+near"+|+intext:"syntax+error+has+occurred"+|+intext:"incorrect+syntax+near"+|+intext:"unexpected+end+of+SQL+command"+|+intext:"Warning:+mysql_connect()"+|+intext:"Warning:+mysql_query()"+|+intext:"Warning:+pg_connect()"'>SQL Errors</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} filetype:config 'apache'">Apache Config Files</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} inurl:robots.txt">Robots.txt File</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv">Publicly Exposed Documents</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} ext:php intitle:phpinfo 'published by the PHP Group'">phpinfo()</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} inurl:shell | inurl:backdoor | inurl:wso | inurl:cmd | shadow | passwd | boot.ini | inurl:backdoor">Finding Backdoors</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} inurl:readme | inurl:license | inurl:install | inurl:setup | inurl:config">Install / Setup Files</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} inurl:redir | inurl:url | inurl:redirect | inurl:return | inurl:src=http | inurl:r=http">Open Redirects</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} ext:action | ext:struts | ext:do">Apache STRUTS RCE</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:http://ideone.com | site:http://codebeautify.org | site:http://codeshare.io | site:http://codepen.io | site:http://repl.it | site:http://justpaste.it | site:http://pastebin.com | site:http://jsfiddle.net | site:http://trello.com | site:*.atlassian.net | site:bitbucket.org '{DOMAIN}'">3rd Party Exposure</button>
+                <button class="recon-button" data-url="https://securityheaders.com/?q={DOMAIN}&followRedirects=on">Check Security Headers</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=inurl:gitlab {DOMAIN}">GitLab</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:pastebin.com {DOMAIN}">Find Pastebin Entries</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:linkedin.com employees {DOMAIN}">Employees on LINKEDIN</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} inurl:'/phpinfo.php' | inurl:'.htaccess'">.htaccess Sensitive Files</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:*.{DOMAIN}">Find Subdomains</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:*.*.{DOMAIN}">Find Sub-Subdomains</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} inurl:wp-content | inurl:wp-includes">Find WordPress #2</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:atlassian.net | site:bitbucket.org '{DOMAIN}'">Search in Bitbucket</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:stackoverflow.com '{DOMAIN}'">Search in StackOverflow</button>
+                <button class="recon-button" data-url="https://github.com/search?q='*.{DOMAIN}'&type=repositories">Search in GITHUB</button>
+                <button class="recon-button" data-url="https://www.openbugbounty.org/search/?search={DOMAIN}">Search in OpenBugBounty</button>
+                <button class="recon-button" data-url="https://www.reddit.com/search/?q={DOMAIN}&rdt=33172">Search in Reddit</button>
+                <button class="recon-button" data-url="https://threatcrowd.org/domain.php?domain={DOMAIN}">Check in ThreatCrowd</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=inurl:'/.git '{DOMAIN} -github">.git Folder</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:digitaloceanspaces.com '{DOMAIN}'">Digital Ocean Spaces</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=inurl:{DOMAIN} ext:swf">Find .SWF File (Google)</button>
+                <button class="recon-button" data-url="https://web.archive.org/cdx/search?url={DOMAIN}/&matchType=domain&collapse=urlkey&output=text&fl=original&filter=urlkey:.*swf&limit=100000">Search SWF in WayBack</button>
+                <button class="recon-button" data-url="https://web.archive.org/cdx/search?url={DOMAIN}/&matchType=domain&collapse=urlkey&output=text&fl=original&filter=mimetype:application/x-shockwave-flash&limit=100000">Search in WayBack Machine</button>
+                <button class="recon-button" data-url="https://viewdns.info/reverseip/?host={DOMAIN}&t=1">Reverse IP Lookup</button>
+                <button class="recon-button" data-url="intitle:traefik inurl:8080/dashboard '{DOMAIN}'">Traefik</button>
+                <button class="recon-button" data-url="https://cse.google.com/cse?cx=002972716746423218710:veac6ui3rio#gsc.tab=0&gsc.q={DOMAIN}">Cloud Storage and Buckets</button>
+                <button class="recon-button" data-url="site:.s3.amazonaws.com '{DOMAIN}'">S3 Buckets</button>
+                <button class="recon-button" data-url="https://publicwww.com/websites/{DOMAIN}/">Source Code - PublicWWW</button>
+                <button class="recon-button" data-url="https://www.shodan.io/search?query={DOMAIN}">Search in SHODAN</button>
+                <button class="recon-button" data-url=".sharepoint.com/_vti_bin/webpartpages/asmx -docs -msdn -mdsec site:{DOMAIN}">CVE-2020-0646 SharePoint RCE</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:{DOMAIN} filetype:wsdl | filetype:WSDL | ext:svc | inurl:wsdl | Filetype: ?wsdl | inurl:asmx?wsdl | inurl:jws?wsdl | intitle:_vti_bin/sites.asmx?wsdl | inurl:_vti_bin/sites.asmx?wsdl">API Endpoints - WSDL</button>
+                <button class="recon-button" data-url="https://gist.github.com/search?q=*.'{DOMAIN}'">GitHub GIST Searches</button>
+                <button class="recon-button" data-url="https://crt.sh/?q={DOMAIN}">Search in Crt.sh Logs</button>
+                <button class="recon-button" data-url="https://www.google.com/search?q=site:throwbin.io {DOMAIN}">Plaintext Password Leak</button>
+                <button class="recon-button" data-url="https://whatcms.org/?s={DOMAIN}">What CMS?</button>
+            </div>
+          </div>
+        
+          <script>
+            document.getElementById("submit").addEventListener("click", function() {
+              const domain = document.getElementById("domain").value.trim();
+              if (domain === "") {
+                alert("Please enter a valid domain.");
+                return;
+              }
+              document.getElementById("recon-buttons").classList.remove("hidden");
+        
+              document.querySelectorAll(".recon-button").forEach(button => {
+                const originalUrl = button.getAttribute("data-url");
+                const newUrl = originalUrl.replace("{DOMAIN}", encodeURIComponent(domain));
+                button.setAttribute("data-url", newUrl);
+              });
+            });
+        
+            document.querySelectorAll(".recon-button").forEach(button => {
+              button.addEventListener("click", function() {
+                const url = this.getAttribute("data-url");
+                if (url) {
+                  window.open(url, "_blank");
+                }
+              });
+            });
+          </script>
+    </div>
+  </div>
+
+  
+</body>
+</html>
